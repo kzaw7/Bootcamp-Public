@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>jQuery Functions</title>
+  <style>
+  p {
+    margin: 8px;
+    font-size: 16px;
+  }
+  .selected {
+    color: blue;
+    background-color: red;
+  }
+  .wrapper{
+  width: 970px;
+  background-color: aquamarine;
+  }
+  .box{
+      width: 970px;
+      height:210px;
+      border-bottom: 1px solid black;
+  }
+  h1{
+      text-align: center;
+  }
+  h2{
+      margin-left: 300px;
+      font-size:30px;
+  }
+  img{
+      display: inline-block;
+      vertical-align: top;
+      margin-left: 600px;
+  }
+  .search_bar{
+      display:inline-block;
+      vertical-align: top;
+      margin-left: 650px;
+      border-radius: 1px solid gray;
+      border: 5px cadetblue;
+  }
+
+  </style>
+  <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+</head>
+<body>
+    
+    <div class="wrapper">
+        <div class="search_bar"><input type="text" placeholder ="Search"></div>
+        <h2>My jQuery Assignment</h2>
+
+    <div class="box">  
+        <h1>Add Class</h1>    
+        <button class="button1">AddClass</button> 
+        <p id="red">Click the button to add class 'red' to this paragraph.</p>
+        <script>$( ".button1" ).click(function() {
+            $( "#red" ).addClass( "selected" );
+            }); </script>
+    </div>  
+
+    <div class="box">
+        <h1>Slidetoggle</h1>
+        <img class="puppy" src="cutepom.jpg" alt="puppy" height=100px; width=auto;>
+        <button class="button2">Slidetoggle</button>
+        <p>Click the button to slidetoggle an image.</p>
+         <script>$( ".button2" ).click(function() {
+            $( ".puppy" ).slideToggle( "slow", function() {
+              // Animation complete.
+            });
+          });
+        </script>
+    </div>
+
+    <div class="box">
+        <h1>Append</h1>
+        <button class="button3">Append</button>
+        <strong>Hello World!!</strong>
+        <p>Click the button to append a new paragraph.</p>
+        <script>$( ".button3" ).click(function() {
+            $( "p" ).append( $( "strong" ) );
+            });</script>
+    </div>
+
+     
+<div class="box">
+    <h1>Hide & Show</h1>
+    <button class="button4">Hide</button>
+    <button class="button5">Show</button>
+    <p>Click the button to hide a paragraph and then show.</p>
+    <p class="hide">This paragraph could be hidden.</p>
+    <script>$( ".button4" ).click(function() {
+        $( ".hide" ).hide( "fast")
+        });
+        $( ".button5" ).click(function() {
+  $( ".hide" ).show( "slow" );
+});</script>
+</div>
+
+<div class="box">
+    <h1>Slide Up & Down</h1>
+    <img class="kitty" src="kitty.jpg" alt="kitty" height=100px; width=auto;>
+    <button class="button6">Slide Up</button>
+    <button class="button7">Slide Down</button>
+    <p>Click the button to slide up and down an image.</p>
+    <script>
+        $( ".button6" ).click(function() {
+  $( ".kitty" ).slideUp( "slow")
+  $( ".button7" ).click(function() {
+        $( ".kitty" ).slideDown("slow")
+        });
+  });
+</script>
+</div>
+
+</div>
+
+
+</body>
+</html>
